@@ -1,0 +1,95 @@
+@import "../../../assets/color";
+
+.dashboard-information {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5em;
+  &-card {
+    width: 24%;
+  }
+}
+
+.bloc-stats {
+  display: flex;
+  justify-content: space-between;
+  &-right {
+    flex-direction: column;
+  }
+  &-left {
+    flex-direction: column;
+  }
+}
+
+.dashboard-information-card {
+  &-collaborator {
+    background: linear-gradient(
+      90deg,
+      rgba(11, 19, 43, 0.6867121848739496) 0%,
+      rgba(11, 19, 43, 1) 41%,
+      rgba(11, 19, 43, 1) 100%
+    );
+  }
+  &-website {
+    background: linear-gradient(
+      90deg,
+      rgba(206, 49, 137, 0.7175245098039216) 0%,
+      rgba(206, 49, 137, 1) 41%,
+      rgba(206, 49, 137, 1) 100%
+    );
+  }
+  &-linkedin {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 115, 176, 0.6951155462184874) 0%,
+      rgba(0, 115, 176, 1) 41%,
+      rgba(0, 115, 176, 1) 100%
+    );
+  }
+  &-projects {
+    background: linear-gradient(
+      90deg,
+      rgba(249, 208, 3, 0.6867121848739496) 0%,
+      rgba(249, 208, 3, 1) 41%,
+      rgba(249, 208, 3, 1) 100%
+    );
+  }
+}
+
+.dashboard-content {
+  display: flex;
+  justify-content: space-around;
+  &-data {
+    margin-left: 1em;
+    display: inline-block;
+    width: 75%;
+    &-welcome {
+      padding: 2em;
+      width: 70%;
+      display: table-cell;
+      vertical-align: middle;
+      background-color: $aml-blue;
+      color: $white-color;
+      height: auto;
+    }
+    &-hours {
+      width: 30%;
+      display: table-cell;
+      vertical-align: middle;
+      background-color: $aml-pink;
+      color: $white-color;
+      height: 100%;
+    }
+  }
+  &-technology {
+    display: table-cell;
+    vertical-align: middle;
+    background: linear-gradient(
+      90deg,
+      rgba(11, 19, 43, 0.6867121848739496) 0%,
+      rgba(11, 19, 43, 1) 41%,
+      rgba(11, 19, 43, 1) 100%
+    );
+    color: $white-color;
+    height: 800px;
+  }
+}

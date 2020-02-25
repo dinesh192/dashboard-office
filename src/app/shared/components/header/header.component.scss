@@ -1,0 +1,30 @@
+@import "../../../../assets/color";
+
+.mat-toolbar.mat-primary{
+  background: $aml-blue;
+}
+
+.tbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.mat-tootlbar-compagny--logo {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-dashboard {
+  &-profil {
+    width: 150px;
+    &--img {
+      width: 100%;
+      margin: 0 0.9em;
+      border-radius: 50%;
+      border: 1.5px solid $white-color;
+    }
+  }
+}

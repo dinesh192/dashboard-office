@@ -1,0 +1,43 @@
+<div class="lock-container">
+  <div class="lock" *ngIf="displayLock">
+    <mat-icon
+      class="lockElement"
+      svgIcon="lock-open-outline"
+      *ngIf="sidenavOpen"
+      (click)="toggleSideNavLock()"
+    ></mat-icon>
+    <mat-icon
+      class="lockElement"
+      svgIcon="lock-outline"
+      *ngIf="!sidenavOpen"
+      (click)="toggleSideNavLock()"
+    ></mat-icon>
+  </div>
+</div>
+<mat-nav-list>
+  <mat-list role="list">
+    <a routerLink="/{{ menu.link }}" *ngFor="let menu of menuSidenav">
+      <mat-list-item>
+        <mat-icon svgIcon="{{ menu.icon }}"></mat-icon>
+        <h3 matLine>{{ menu.title | titlecase }}</h3>
+      </mat-list-item>
+    </a>
+  </mat-list>
+  <mat-divider></mat-divider>
+  <mat-list role="list">
+    <a [routerLink]="['/contact']" routerLinkActive="active">
+      <mat-list-item>
+        <mat-icon svgIcon="account-box-outline"></mat-icon>
+        <h3 matLine>Contact</h3>
+      </mat-list-item>
+    </a>
+  </mat-list>
+  <mat-list role="list">
+    <a [routerLink]="['/contact-important']" routerLinkActive="active">
+      <mat-list-item>
+        <mat-icon svgIcon="shield-account-outline"></mat-icon>
+        <h3 matLine>Important Contact</h3>
+      </mat-list-item>
+    </a>
+  </mat-list>
+</mat-nav-list>

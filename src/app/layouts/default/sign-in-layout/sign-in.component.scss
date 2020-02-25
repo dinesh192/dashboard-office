@@ -1,0 +1,55 @@
+@import "../../../../assets/color";
+
+.layoutSignIn-Dashbaord {
+  display: flex;
+  height: 100vh;
+  &-bg {
+    width: 65%;
+    background-image: url("../../../../assets/images/new-york-city-buildings-sunrise-morning-hd-wallpaper0.png");
+    background-size: cover;
+    &::before {
+      content: "";
+      background: rgba(206, 115, 218, 0.38);
+      height: 100vh;
+      width: 65%;
+      position: absolute;
+    }
+    h1,
+    .makeIt {
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 0.5em;
+      font-family: "Rubik", sans-serif;
+      font-size: 1.8em;
+      color: $white-color;
+      z-index: 1;
+    }
+    .makeIt {
+      font-size: 4em;
+      top: -90px;
+    }
+    span {
+      position: absolute;
+      bottom: 20px;
+      right: 15px;
+      color: $white-color;
+      opacity: 0.6;
+      font-size: 0.5em;
+    }
+  }
+  &-form {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .layoutSignIn-Dashbaord-bg {
+    display: none;
+  }
+  .layoutSignIn-Dashbaord-form {
+    width: 100%;
+  }
+}

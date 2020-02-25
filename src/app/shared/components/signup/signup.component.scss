@@ -1,0 +1,29 @@
+.signup-dashboard {
+  &-size {
+    width: 70%;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  h1 {
+    margin-bottom: 1em;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 2em;
+  }
+}
+
+.signup-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  vertical-align: middle;
+  height: 100%;
+  align-self: center;
+}
+
+.link-already-sing-in {
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+<animatable-component
+  autoplay
+  easing="ease-in-out"
+  duration="5000"
+  delay="0"
+  animation="fadeOut"
+  iterations="Infinity"
+>
+  <div class="clock-welcome">
+    <h1>{{ welcomeMessage }}</h1>
+  </div>
+</animatable-component>
+<div class="clock-content">
+  <span class="clock">{{ today | date: "HH" }}</span
+  ><span class="clock">:{{ today | date: "mm" }}</span
+  ><span class="clock">:{{ today | date: "ss" }}</span>
+</div>
+<div class="clock-data">
+  <span>{{
+    moment(today)
+      .locale("fr")
+      .format("dddd Do MMMM YYYY") | titlecase
+  }}</span>
+</div>

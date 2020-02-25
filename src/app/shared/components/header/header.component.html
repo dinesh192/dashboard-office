@@ -1,0 +1,62 @@
+<mat-toolbar color="primary" class="tbar">
+  <mat-toolbar-row>
+    <span>
+      <img
+        src="../../../../assets/images/logo-amiltone-blanc.png"
+        alt="logo compangny"
+        width="15%"
+        class="mat-tootlbar-compagny--logo"
+      />
+    </span>
+    <div
+      fxFlex
+      fxLayout="row"
+      fxLayoutAlign="flex-end"
+      class="toolbar-dashboard"
+    >
+      <ul fxLayout="row" fxLayoutGap="20px">
+        <li>
+          <button mat-icon-button>
+            <mat-icon svgIcon="calendar-month-outline"></mat-icon>
+          </button>
+        </li>
+
+        <li>
+          <button mat-icon-button>
+            <mat-icon svgIcon="email-outline"></mat-icon>
+          </button>
+        </li>
+        <li class="toolbar-dashboard-profil">
+          <button mat-icon-button [matMenuTriggerFor]="menuProfil">
+            <img
+              src="{{ users.photoUrl }}"
+              alt=""
+              class="toolbar-dashboard-profil--img"
+            />
+            <span>{{ users.firstName }} {{ users.lastName | uppercase }}</span>
+          </button>
+          <mat-menu #menuProfil="matMenu">
+            <button mat-menu-item>
+              <mat-icon svgIcon="account-circle-outline"></mat-icon>
+              Profil
+            </button>
+            <button mat-menu-item>
+              <mat-icon svgIcon="cogs"></mat-icon>
+              Setting
+            </button>
+            <button mat-menu-item (click)="logOut()">
+              <mat-icon svgIcon="location-exit"></mat-icon>
+              Sign out
+            </button>
+          </mat-menu>
+        </li>
+        <mat-divider> </mat-divider>
+        <li>
+          <button mat-icon-button>
+            <mat-icon svgIcon="arrow-left-circle-outline"></mat-icon>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

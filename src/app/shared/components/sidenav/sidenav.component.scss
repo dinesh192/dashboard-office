@@ -1,0 +1,27 @@
+@import "../../../../assets/color";
+
+mat-nav-list {
+  margin-top: 5em;
+}
+
+.lock {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2em;
+  padding: 0 0.5em;
+  mat-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    background-color: $aml-blue;
+    border-radius: 50%;
+    color: white;
+  }
+}
+
+.lock-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 45px;
+}

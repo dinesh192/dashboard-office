@@ -1,0 +1,53 @@
+@import "../../../../assets/color";
+
+.layoutSignUp-Dashbaord {
+  display: flex;
+  height: 100vh;
+  &-bg {
+    width: 65%;
+    background-image: url("../../../../assets/images/downtown-690826_1920.jpg");
+    background-size: cover;
+    &::before {
+      content: "";
+      background: rgba(197, 91, 41, 0.22);
+      height: 100vh;
+      width: 65%;
+      position: absolute;
+    }
+    h1,
+    .makeIt {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-family: "Rubik", sans-serif;
+      color: $white-color;
+      font-size: 3em;
+      z-index: 1;
+      position: relative;
+    }
+    .makeIt {
+      top: -90px;
+    }
+    span {
+      position: absolute;
+      bottom: 20px;
+      left: 15px;
+      color: $white-color;
+      opacity: 0.6;
+      font-size: 0.5em;
+    }
+  }
+  &-form {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .layoutSignUp-Dashbaord-bg {
+    display: none;
+  }
+  .layoutSignUp-Dashbaord-form {
+    width: 100%;
+  }
+}

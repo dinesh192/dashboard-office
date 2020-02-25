@@ -1,0 +1,17 @@
+<div class="widget-card-like">
+  <div class="widget-card-like-content">
+    <mat-icon svgIcon="{{ icon }}"></mat-icon>
+  </div>
+
+  <div class="widget-card-like-information">
+    <h1>{{ label }}</h1>
+    <span>{{ description }}</span>
+  </div>
+
+  <div
+    class="widget-card-like-total"
+    [ngStyle]="{ 'background-color': bgColor }"
+  >
+    {{ total }}
+  </div>
+</div>

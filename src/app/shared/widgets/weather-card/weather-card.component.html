@@ -1,0 +1,70 @@
+<div class="dashboard-weather" *ngIf="weather as f">
+  <h1>Météo en direct</h1>
+  <p class="dashboard-weather-localisation">{{ f.name }}</p>
+  <div class="dashboard-weather--infos">
+    <div class="dashboard-weather--icon">
+      <img
+        src="../../../../assets/images/weather-icons/{{
+          f.weather[0].icon
+        }}.png"
+        alt="{{ f.weather[0].main }}"
+        class="icon-weather"
+      />
+      <span class="dashboard-weather--temp-description">{{
+        f.weather[0].description | titlecase
+      }}</span>
+    </div>
+    <div class="dashboard-weather--temp">
+      <span class="dashboard-weather--temp-temperature"
+        >{{ f.main.temp | number: ".0-0" }}<sup>°</sup> C</span
+      >
+      <span class="dashboard-weather--temp-tempertaureRessentie"
+        >Température ressentie : {{ f.main.feels_like | number: ".1-1"
+        }}<sup>°</sup> C</span
+      >
+    </div>
+  </div>
+
+  <div
+    class="dashboard-weather-moreInformations"
+    *ngIf="weather as weatherInfo"
+  >
+    <div class="dashboard-weather-moreInformations-wind" *ngIf="weatherWind">
+      <img
+        src="../../../../assets/images/weather-icons/24.png"
+        alt="wind"
+        class="icon-weather-moreInformations icon-weather"
+      />
+      <span>{{ weatherWind | number: ".1-1" }} km/h</span>
+    </div>
+
+    <div class="dashboard-weather-moreInformations-humidity">
+      <img
+        src="../../../../assets/images/weather-icons/13d.png"
+        alt="wind"
+        class="icon-weather-moreInformations icon-weather"
+      />
+      <span>{{ weatherInfo.main.humidity }}%</span>
+    </div>
+    <div class="dashboard-weather-moreInformations-humidity">
+      <img
+        src="../../../../assets/images/weather-icons/01d.png"
+        alt="wind"
+        class="icon-weather-moreInformations icon-weather"
+      />
+      <span>{{ weatherInfo.sys.sunrise * 1000 | date: "H:mm" }}</span>
+    </div>
+    <div class="dashboard-weather-moreInformations-humidity">
+      <img
+        src="../../../../assets/images/weather-icons/01n.png"
+        alt="wind"
+        class="icon-weather-moreInformations icon-weather"
+      />
+      <span>{{ weatherInfo.sys.sunset * 1000 | date: "H:mm" }}</span>
+    </div>
+  </div>
+
+  <div>
+    <app-widget-line></app-widget-line>
+  </div>
+</div>

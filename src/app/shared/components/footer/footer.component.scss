@@ -1,0 +1,23 @@
+@import "../../../../assets/color";
+
+footer {
+  background-color: $white-color;
+}
+.dashboard-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em 5em;
+  &--information {
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 0.8em;
+    }
+  }
+  &--menu {
+    display: inline-flex;
+    li {
+      margin: 0 0.3em;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+<h1>Next Birthday</h1>
+<div class="dashboard-cake-birthday">
+  <img src="../../../../assets/images/cake.png" alt="" />
+</div>
+
+<div class="spinner">
+  <ngx-spinner
+    bdColor="rgba(51, 51, 51, 0.47)"
+    size="medium"
+    color="#fff"
+    type="line-spin-clockwise-fade"
+    [fullScreen]="false"
+  ></ngx-spinner>
+</div>
+<div
+  class="dashboard-birthday-informations"
+  *ngFor="let item of arrayBirthday | slice: 0:1"
+>
+  <span>{{ item.firstName }} {{ item.lastName }}</span>
+  <p>
+    {{
+      moment(item.birthdayDate)
+        .locale("fr")
+        .format("Do MMMM") | titlecase
+    }}
+    {{ moment(actualYear).format("YYYY") }}
+  </p>
+</div>
