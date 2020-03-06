@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpParams, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
-  readonly rootUrl = 'http://api.openweathermap.org/data/2.5/';
-  apiKey = '8d516015a3b94526a34642759a19d41b';
-
   constructor(private http: HttpClient) {}
 
   getWeatherDatabyCoords(lat, lon) {
@@ -17,9 +13,11 @@ export class WeatherService {
       .set('lon', lon)
       .set('units', 'metric')
       .set('lang', 'fr')
-      .set('appid', this.apiKey);
+      .set('appid', `${environment.apiKeyOpenWeatherMap}`);
 
-    return this.http.get(this.rootUrl + 'weather', { params });
+    return this.http.get(`${environment.apiOpenWeatherMap}/weather`, {
+      params
+    });
   }
 
   getForecastDatabyCoords(lat, lon) {
@@ -28,8 +26,18 @@ export class WeatherService {
       .set('lon', lon)
       .set('units', 'metric')
       .set('lang', 'fr')
-      .set('appid', this.apiKey);
+      .set('appid', `${environment.apiKeyOpenWeatherMap}`);
 
-    return this.http.get(this.rootUrl + 'forecast', { params });
+    return this.http.get(`${environment.apiOpenWeatherMap}/forecast`, {
+      params
+    });
+  }
+
+  getFiveDaysForecastDatabyCoords() {
+    const params = new HttpParams()
+      .set('exclude', 'flags,alerts,hourly, currently')
+      .set('units', 'auto')
+      .set('lang', 'fr');
+    return this.http.get(`${environment.apiDarkSkyWeather}`, { params });
   }
 }

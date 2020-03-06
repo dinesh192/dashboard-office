@@ -71,11 +71,9 @@ export class AuthService {
         .put(file);
       upload.on(
         firebase.storage.TaskEvent.STATE_CHANGED,
-        () => {
-          console.log('Chargement...');
-        },
+        () => {},
         error => {
-          console.log('Erreur de chargement: ' + error);
+          console.log(error);
           reject(error);
         },
         () => {

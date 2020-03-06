@@ -16,7 +16,7 @@
   class="dashboard-birthday-informations"
   *ngFor="let item of arrayBirthday | slice: 0:1"
 >
-  <span>{{ item.firstName }} {{ item.lastName }}</span>
+  <span>{{ item.firstName | titlecase }} {{ item.lastName | titlecase }}</span>
   <p>
     {{
       moment(item.birthdayDate)

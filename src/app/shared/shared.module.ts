@@ -22,7 +22,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
-import { LineComponent } from './widgets/line/line.component';
+import { LineComponent } from './widgets/weather-line/line.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widgets/card/card.component';
 import { WeatherCardComponent } from './widgets/weather-card/weather-card.component';
@@ -30,6 +30,8 @@ import { CardLikeComponent } from './widgets/card-like/card-like.component';
 import { WidgetClockComponent } from './widgets/widget-clock/widget-clock.component';
 import { WidgetBirthdayComponent } from './widgets/widget-birthday/widget-birthday.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { TwitterComponent } from './widgets/twitter/twitter.component';
+import { TweetPipe } from './pipes/tweet.pipe';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -42,7 +44,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     WeatherCardComponent,
     CardLikeComponent,
     WidgetClockComponent,
-    WidgetBirthdayComponent
+    WidgetBirthdayComponent,
+    TwitterComponent,
+    TweetPipe
   ],
   imports: [
     CommonModule,
@@ -71,6 +75,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     SignupComponent,
     SigninComponent,
     LineComponent,
+    TwitterComponent,
     CardComponent,
     WeatherCardComponent,
     CardLikeComponent,

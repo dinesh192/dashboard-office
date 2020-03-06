@@ -1,0 +1,66 @@
+@import "../../../../assets/color";
+
+.dashboard-twitter {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-twitter-logo {
+  flex: 1;
+  justify-content: center;
+}
+
+.dashboard-twitter-tweet {
+  flex: 15;
+  &-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+    span {
+      flex: 1;
+      margin-right: 0.1em;
+      img {
+        border-radius: 50%;
+      }
+    }
+    h1 {
+      flex: 10;
+    }
+  }
+}
+
+.dashboard-twitter-tweet-container {
+  display: flex;
+  align-items: center;
+  .dashboard-twitter-tweet-text {
+    padding: 2em;
+    flex: 15;
+    h1 {
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 1.5em;
+      margin-bottom: 0.9em;
+    }
+    h1,
+    p,
+    span {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+  .dashboard-twitter-tweet-img {
+    flex: 1;
+    img {
+      border-radius: 0.5em;
+    }
+  }
+}
+
+.spinner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.9em 0;
+  top: 22px;
+}

@@ -32,34 +32,35 @@ export class WidgetBirthdayComponent implements OnInit, OnDestroy {
       data => {
         this.usersBirthdayDate = data;
         this.arrayBirthday = _.values(this.usersBirthdayDate);
-        this.arrayBirthday.sort(this.sortByDateNoYear);
-        setTimeout(() => {
-          this.spinner.hide();
-        }, 1000);
+        this.arrayBirthday.sort(this.sortByBirthdayDate);
+        this.spinner.hide();
       }
     );
     this.userService.getAllUsers();
     this.userService.emitBirthday();
   }
-  sortByDateNoYear(adate, bdate) {
-    let results;
-    const lhdate = moment(adate.birthdayDate);
-    const rhdate = moment(bdate.birthdayDate);
-    results =
-      lhdate.month() > rhdate.month()
-        ? 1
-        : lhdate.month() < rhdate.month()
-        ? -1
-        : 0;
-    if (results === 0) {
-      results =
-        lhdate.date() > rhdate.date()
-          ? 1
-          : lhdate.date() < rhdate.date()
-          ? -1
-          : 0;
+
+  sortByBirthdayDate(a, b) {
+    let needSort = 0;
+    const today = moment().startOf('day');
+    const aBirthday = moment(a.birthdayDate, 'YYYY-MM-DD');
+    const bBirthday = moment(b.birthdayDate, 'YYYY-MM-DD');
+    const aNextBirthday = moment()
+      .month(aBirthday.month())
+      .date(aBirthday.date());
+    const bNextBirthday = moment()
+      .month(bBirthday.month())
+      .date(bBirthday.date());
+    if (
+      (bNextBirthday.isAfter(today) && aNextBirthday.isAfter(today)) ||
+      (bNextBirthday.isBefore(today) && aNextBirthday.isBefore(today))
+    ) {
+      needSort = bNextBirthday.isAfter(aNextBirthday) ? -1 : 1;
+    } else {
+      needSort = bNextBirthday.isAfter(today) ? 1 : -1;
     }
-    return results;
+
+    return needSort;
   }
 
   ngOnDestroy(): void {

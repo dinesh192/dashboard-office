@@ -3,7 +3,7 @@
 .dashboard-information {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5em;
+  margin-bottom: 1em;
   &-card {
     width: 24%;
   }
@@ -58,30 +58,45 @@
 .dashboard-content {
   display: flex;
   justify-content: space-around;
-  &-data {
-    margin-left: 1em;
+  margin-bottom: 2em;
+  padding: 1em 1em 0 1em;
+  &-dataWidget {
+    margin-left: 1.5em;
+    flex: 6;
+    display: flex;
+    height: 100%;
+  }
+
+  &-aside {
     display: inline-block;
-    width: 75%;
-    &-welcome {
+  }
+  &-data {
+    display: flex;
+    &-container-weather {
+      margin-top: 1.5em;
+    }
+    &-hours {
       padding: 2em;
-      width: 70%;
-      display: table-cell;
       vertical-align: middle;
       background-color: $aml-blue;
       color: $white-color;
-      height: auto;
     }
-    &-hours {
-      width: 30%;
-      display: table-cell;
+    &-birthday {
+      margin-left: 1.5em;
+      padding: 2em;
       vertical-align: middle;
       background-color: $aml-pink;
       color: $white-color;
-      height: 100%;
+    }
+    &-twitter {
+      padding: 2em;
+      vertical-align: middle;
+      background-color: $aml-pink;
+      color: $white-color;
     }
   }
-  &-technology {
-    display: table-cell;
+  &-weather {
+    flex: 3;
     vertical-align: middle;
     background: linear-gradient(
       90deg,
@@ -90,6 +105,15 @@
       rgba(11, 19, 43, 1) 100%
     );
     color: $white-color;
-    height: 800px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .dashboard-content,
+  .dashboard-content-data {
+    flex-direction: column;
+  }
+  .dashboard-content-data {
+    margin-left: 0em;
   }
 }

@@ -2,7 +2,8 @@
   font-family: "Lato";
   padding: 2em 0em;
   text-align: center;
-  h1 {
+  .dashboard-weather-title {
+    text-align: center;
     font-weight: 900;
     font-size: 40px;
     line-height: 40px;
@@ -21,20 +22,38 @@
   }
 
   .dashboard-weather--icon {
+    img {
+      margin-bottom: 1em;
+    }
   }
 
   .dashboard-weather--temp {
-    width: 100%;
+    width: 70%;
     display: inline-grid;
     white-space: nowrap;
     text-align: end;
     &-temperature {
       font-size: 5.5em;
       font-weight: 800;
-      margin-bottom: 0.4em;
+    }
+    &-like {
+      margin-bottom: 1.5em;
+      &-up,
+      &-down {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.7em;
+        mat-icon {
+          margin-right: 0.5em;
+        }
+      }
+      &-up {
+        padding-right: 1em;
+      }
     }
     &-description {
       font-size: 1em;
+      white-space: nowrap;
     }
     &-tempertaureRessentie {
       font-size: 0.9em;
@@ -106,7 +125,7 @@
 }
 
 .dashboard-weather-moreInformations {
-  margin: 3em 0;
+  margin: 1.5em 0;
   display: flex;
   justify-content: space-around;
   &-wind {
@@ -115,4 +134,24 @@
   &-humidity {
     display: grid;
   }
+}
+
+.dashboard-weather-nextDays {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-test {
+    display: inline;
+  }
+  .icon-weather-nextDays-data {
+    width: 65%;
+    margin: 1em 0;
+  }
+}
+
+.spinner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

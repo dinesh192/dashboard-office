@@ -4,7 +4,7 @@
       <img
         src="../../../../assets/images/logo-amiltone-blanc.png"
         alt="logo compangny"
-        width="15%"
+        width="10%"
         class="mat-tootlbar-compagny--logo"
       />
     </span>
@@ -52,8 +52,15 @@
         </li>
         <mat-divider> </mat-divider>
         <li>
-          <button mat-icon-button>
-            <mat-icon svgIcon="arrow-left-circle-outline"></mat-icon>
+          <button mat-icon-button (click)="onFullScreen()" *ngIf="fullScreen">
+            <mat-icon svgIcon="fullscreen"></mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            (click)="onCloseFullScreen()"
+            *ngIf="closeFullScreen"
+          >
+            <mat-icon svgIcon="fullscreen-exit"></mat-icon>
           </button>
         </li>
       </ul>

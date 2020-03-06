@@ -11,14 +11,17 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultComponent,
+    canActivate: [AuthGuardService],
     children: [
       {
         path: '',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuardService]
       },
       {
         path: 'posts',
-        component: PostsComponent
+        component: PostsComponent,
+        canActivate: [AuthGuardService]
       }
     ]
   },

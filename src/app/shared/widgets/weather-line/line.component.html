@@ -1,0 +1,16 @@
+<div class="spinner">
+  <ngx-spinner
+    bdColor="rgba(51, 51, 51, 0.47)"
+    size="medium"
+    color="#fff"
+    type="line-spin-clockwise-fade"
+    [fullScreen]="false"
+  ></ngx-spinner>
+</div>
+<ng-container *ngIf="weatherData">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    style="width: 100%; height: 170px; display: block;"
+  ></highcharts-chart>
+</ng-container>

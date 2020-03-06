@@ -12,7 +12,14 @@ export const environment = {
     projectId: '',
     storageBucket: '',
     messagingSenderId: ''
-  }
+  },
+  apiOpenWeatherMap:
+    'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5',
+  apiKeyOpenWeatherMap: '8d516015a3b94526a34642759a19d41b',
+  apiDarkSkyWeather:
+    'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/df2397bcd9a09be6dae0745eb195f654/43.5283,5.4497',
+  apitwitter:
+    'https://cors-anywhere.herokuapp.com/https://pure-fjord-81228.herokuapp.com'
 };
 
 /*

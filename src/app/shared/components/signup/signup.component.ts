@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../models/user';
-
+import * as moment from 'moment';
 import { DateAdapter } from '@angular/material';
 import { DatePipe } from '@angular/common';
 
@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit {
   fileUrl: string;
   fileUploaded = false;
   emailPlaceholder: any;
+  moment: any = moment;
 
   constructor(
     private authService: AuthService,
@@ -57,9 +58,10 @@ export class SignupComponent implements OnInit {
     const password = this.signUpForm.get('password').value;
     const firstName = this.signUpForm.get('firstName').value;
     const lastName = this.signUpForm.get('lastName').value;
-    const birthdayDate = this.datePipe.transform(
-      this.signUpForm.get('birthdayDate').value
-    );
+    const birthdayDate = moment(
+      this.signUpForm.get('birthdayDate').value,
+      'YYYY-MM-DD'
+    ).format('YYYY-MM-DD');
 
     const userInformations = new User(firstName, lastName, birthdayDate);
     if (this.fileUrl && this.fileUrl !== '') {

@@ -1,4 +1,4 @@
-<div class="dashboard-information">
+<!-- <div class="dashboard-information">
   <div class="dashboard-information-card">
     <mat-card class="dashboard-information-card-collaborator">
       <app-widget-card-like
@@ -43,25 +43,33 @@
       ></app-widget-card-like>
     </mat-card>
   </div>
-</div>
+</div> -->
 
 <div class="dashboard-content">
-  <div class="dashboard-content-technology mat-elevation-z24">
+  <div class="dashboard-content-weather mat-elevation-z24">
     <app-widget-weather-card></app-widget-weather-card>
   </div>
-  <div class="dashboard-content-data">
-    <div class="dashboard-content-data-welcome mat-elevation-z18">
-      <app-widget-clock></app-widget-clock>
-    </div>
-    <div class="dashboard-content-data-hours mat-elevation-z18">
-      <app-widget-birthday></app-widget-birthday>
-    </div>
-    <div class="dashboard-content-data-twitter"></div>
-    <div class="dashboard-content-data-weather"></div>
-  </div>
-</div>
 
-<!-- <div class="bloc-stats">
+  <div class="dashboard-content-dataWidget">
+    <div class="dashboard-content-aside">
+      <div class="dashboard-content-data">
+        <div class="dashboard-content-data-hours mat-elevation-z24">
+          <app-widget-clock></app-widget-clock>
+        </div>
+        <div class="dashboard-content-data-birthday mat-elevation-z24">
+          <app-widget-birthday></app-widget-birthday>
+        </div>
+      </div>
+      <div class="dashboard-content-data-container-weather">
+        <div class="dashboard-content-data-twitter mat-elevation-z24">
+          <app-widget-twitter></app-widget-twitter>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+  <!-- <div class="bloc-stats">
   <div class="bloc-stats-right">
     <div class="dashboard-statistiques">
       <app-widget-line></app-widget-line>
@@ -83,7 +91,7 @@
   </div>
 </div> -->
 
-<!-- <div class="dashboard-information">
+  <!-- <div class="dashboard-information">
   <div class="dashboard-information-card">
     <mat-card>
       <app-widget-card
@@ -121,3 +129,4 @@
     </mat-card>
   </div>
 </div> -->
+</div>

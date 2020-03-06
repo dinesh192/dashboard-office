@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <mat-drawer-container>
-  <mat-drawer
+  <!-- <mat-drawer
     mode="side"
     opened
     [class.mat-drawer-open]="sidenavOpen"
@@ -14,16 +14,16 @@
       [sidenavOpen]="sidenavOpen"
       (lockSidenavEvent)="receiveEvent($event)"
     ></app-sidenav>
-  </mat-drawer>
-  <mat-drawer-content
+  </mat-drawer> -->
+  <!-- <mat-drawer-content
     [ngStyle]="{ 'padding-left.em ': contentMargin }"
     [ngClass]="{ positionInitialLeft: contentMargin }"
-  >
-    <router-outlet></router-outlet>
-  </mat-drawer-content>
+  > -->
+  <router-outlet></router-outlet>
+  <!-- </mat-drawer-content> -->
 </mat-drawer-container>
 
-<app-footer
+<!-- <app-footer
   [ngStyle]="{ 'margin-left.em': contentMargin }"
   [ngClass]="{ positionInitialLeft: contentMargin }"
-></app-footer>
+></app-footer> -->

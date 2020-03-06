@@ -9,16 +9,7 @@ import * as moment from 'moment';
 export class WidgetClockComponent implements OnInit {
   moment: any = moment;
   today: number = Date.now();
-  message = [
-    'Hello',
-    'Oi',
-    'Hallo',
-    'Ciao',
-    'Nǐn hǎo',
-    'Hola',
-    'Mbote',
-    'Bonjour'
-  ];
+  message = ['Hello', 'Oi', 'Hallo', 'Ciao', 'Nǐn hǎo', 'Hola', 'Bonjour'];
   welcomeMessage: string;
 
   constructor() {

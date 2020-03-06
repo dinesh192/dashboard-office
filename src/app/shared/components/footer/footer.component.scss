@@ -18,6 +18,9 @@ footer {
     display: inline-flex;
     li {
       margin: 0 0.3em;
+      mat-icon {
+        color: $aml-blue;
+      }
     }
   }
 }
