@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
   signInForm: FormGroup;
   errorMessage: string;
-
+  hide = true;
   constructor(
     private authService: AuthService,
     private route: Router,

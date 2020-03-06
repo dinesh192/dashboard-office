@@ -98,12 +98,7 @@
   &-weather {
     flex: 3;
     vertical-align: middle;
-    background: linear-gradient(
-      90deg,
-      rgba(11, 19, 43, 0.6867121848739496) 0%,
-      rgba(11, 19, 43, 1) 41%,
-      rgba(11, 19, 43, 1) 100%
-    );
+    background: $aml-blue;
     color: $white-color;
   }
 }

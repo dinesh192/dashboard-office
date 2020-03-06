@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 export interface TwitterResponse {
   data: any;
@@ -11,6 +12,8 @@ export interface TwitterResponse {
   providedIn: 'root'
 })
 export class TwitterService {
+  buttonClick = new Subject<boolean>();
+
   constructor(private http: HttpClient) {}
   user() {
     return this.http.get<TwitterResponse>(`${environment.apitwitter}/api/user`);

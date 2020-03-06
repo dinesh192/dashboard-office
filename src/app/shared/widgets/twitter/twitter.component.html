@@ -1,33 +1,43 @@
-<div class="dashboard-twitter" *ngFor="let tweet of tweets; let i = index">
-  <div class="dashboard-twitter-logo" *ngIf="tweet">
-    <img src="../../../../assets/images/pngfuel.com.png" alt="" width="80%" />
-  </div>
-  <div class="dashboard-twitter-tweet">
-    <div class="dashboard-twitter-tweet-container">
-      <div class="dashboard-twitter-tweet-text">
-        <div class="dashboard-twitter-tweet-title">
-          <span
-            ><img [src]="tweet.user.profile_image_url_https" alt="" width="70%"
-          /></span>
-          <h1>{{ tweet.user.name }} (@{{ tweet.user.screen_name }})</h1>
+<div *ngFor="let tweet of tweets; let i = index">
+  <div
+    class="dashboard-twitter"
+    *ngIf="!tweet.retweeted_status && tweet.id_str"
+  >
+    <div class="dashboard-twitter-logo">
+      <img src="../../../../assets/images/pngfuel.com.png" alt="" width="80%" />
+    </div>
+    <div class="dashboard-twitter-tweet">
+      <div class="dashboard-twitter-tweet-container">
+        <div class="dashboard-twitter-tweet-text">
+          <div class="dashboard-twitter-tweet-title">
+            <span
+              ><img
+                [src]="tweet.user.profile_image_url_https"
+                alt=""
+                width="70%"
+            /></span>
+            <h1>{{ tweet.user.name }} (@{{ tweet.user.screen_name }})</h1>
+          </div>
+          <p [innerHTML]="tweet | tweet"></p>
+          <span>
+            Publié le
+            {{
+              moment(tweet.created_at, "ddd MMMM DD HH:mm:ss Z YYYY")
+                .locale("fr")
+                .format("DD MMMM, gggg") | titlecase
+            }}
+            à
+            {{
+              moment(
+                tweet.created_at,
+                "ddd MMM DD HH:mm:ss Z YYYY",
+                "fr"
+              ).format("HH")
+            }}h{{ moment(tweet.created_at, "mm", "fr").format("mm") }}
+          </span>
         </div>
-        <p [innerHTML]="tweet | tweet"></p>
-        <span>
-          Publié le
-          {{
-            moment(tweet.created_at, "ddd MMMM DD HH:mm:ss Z YYYY")
-              .locale("fr")
-              .format("DD MMMM, gggg") | titlecase
-          }}
-          à
-          {{
-            moment(tweet.created_at, "ddd MMM DD HH:mm:ss Z YYYY", "fr").format(
-              "HH"
-            )
-          }}h{{ moment(tweet.created_at, "mm", "fr").format("mm") }}
-        </span>
+        <div class="dashboard-twitter-tweet-img"></div>
       </div>
-      <div class="dashboard-twitter-tweet-img"></div>
     </div>
   </div>
 </div>

@@ -9,7 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { DefaultModule } from './layouts/default/default.module';
 import { HttpClientModule } from '@angular/common/http';
-import { registerLocaleData } from '@angular/common';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { WeatherService } from './shared/services/weather.service';
 @NgModule({

@@ -60,7 +60,10 @@
           <app-widget-birthday></app-widget-birthday>
         </div>
       </div>
-      <div class="dashboard-content-data-container-weather">
+      <div
+        class="dashboard-content-data-container-weather"
+        [ngStyle]="{ display: event ? 'block' : 'none' }"
+      >
         <div class="dashboard-content-data-twitter mat-elevation-z24">
           <app-widget-twitter></app-widget-twitter>
         </div>
