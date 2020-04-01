@@ -34,9 +34,11 @@
         <mat-form-field appearance="outline">
           <mat-label>Birthdate</mat-label>
           <input
+            readonly
             matInput
             [matDatepicker]="picker"
             formControlName="birthdayDate"
+            [max]="maxDate"
           />
           <mat-datepicker-toggle
             matSuffix

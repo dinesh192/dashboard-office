@@ -16,14 +16,15 @@ export class AddBirthdayComponent implements OnInit {
   addCollabBirthday: FormGroup;
   errorMessage: string;
   moment: any = moment;
-  // maxDate: Date;
+  maxDate: Date;
   constructor(
     private bottomSheetRef: MatBottomSheetRef<AddBirthdayComponent>,
     private formBuilder: FormBuilder,
     private birthdayService: BirthdayAddService,
     private adapter: DateAdapter<any>
   ) {
-    // const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear();
+    this.maxDate = new Date(currentYear - 1, 11, 31);
   }
 
   ngOnInit() {
