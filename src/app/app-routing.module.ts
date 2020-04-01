@@ -6,12 +6,12 @@ import { PostsComponent } from './modules/posts/posts.component';
 import { SignUpLayoutComponent } from './layouts/default/sign-up-layout/sign-up.component';
 import { SignInLayoutComponent } from './layouts/default/sign-in-layout/sign-in.component';
 import { AuthGuardService } from './shared/services/auth-guard.service';
+import { ListCollaboratorComponent } from './shared/components/list-collaborator/list-collaborator.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DefaultComponent,
-    canActivate: [AuthGuardService],
     children: [
       {
         path: '',
@@ -21,6 +21,12 @@ const routes: Routes = [
       {
         path: 'posts',
         component: PostsComponent,
+        canActivate: [AuthGuardService]
+      },
+      {
+        path: 'collaborator-list',
+        component: ListCollaboratorComponent,
+        data: { animation: 'signUP' },
         canActivate: [AuthGuardService]
       }
     ]

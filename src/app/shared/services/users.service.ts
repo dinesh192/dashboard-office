@@ -49,7 +49,7 @@ export class UsersService {
     firebase
       .database()
       .ref()
-      .child('users')
+      .child('collaborateurs')
       .on('value', snapshot => {
         this.usersBirthday = snapshot.val() ? snapshot.val() : [];
         this.emitBirthday();

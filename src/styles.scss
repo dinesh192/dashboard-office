@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "./assets/reset";
-@import "./assets/color";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import './assets/reset';
+@import './assets/color';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 @font-face {
-  font-family: "Raleway";
-  @import url("./assets/fonts/Raleway-Regular.ttf");
+  font-family: 'Raleway';
+  @import url('./assets/fonts/Raleway-Regular.ttf');
 }
 
 html,
@@ -18,7 +18,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: "Lato";
+  font-family: 'Lato';
 }
 
 /* STYLE ICON BUTTON */
@@ -87,17 +87,6 @@ app-footer {
 .yellow {
   fill: #ffeb3b;
 }
-
-// rect {
-//   fill: transparent !important;
-// }
-
-// .highcharts-axis-line {
-//   stroke: transparent !important;
-// }
-// path {
-//   stroke: transparent;
-// }
 
 .highcharts-grid.highcharts-yaxis-grid path {
   stroke: transparent;

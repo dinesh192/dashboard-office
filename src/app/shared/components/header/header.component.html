@@ -6,6 +6,7 @@
         alt="logo compangny"
         width="10%"
         class="mat-tootlbar-compagny--logo"
+        (click)="return()"
       />
     </span>
     <div
@@ -16,14 +17,14 @@
     >
       <ul fxLayout="row" fxLayoutGap="20px">
         <li>
-          <button mat-icon-button>
-            <mat-icon svgIcon="calendar-month-outline"></mat-icon>
+          <button mat-icon-button (click)="openListCollaborator()">
+            <mat-icon svgIcon="playlist-edit"></mat-icon>
           </button>
         </li>
 
         <li>
-          <button mat-icon-button>
-            <mat-icon svgIcon="email-outline"></mat-icon>
+          <button mat-icon-button (click)="openBottomSheet()">
+            <mat-icon svgIcon="account-plus"></mat-icon>
           </button>
         </li>
         <li class="toolbar-dashboard-profil">

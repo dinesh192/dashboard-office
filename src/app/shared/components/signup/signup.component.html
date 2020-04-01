@@ -34,7 +34,7 @@
             matSuffix
             [for]="picker"
           ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker touchUi #picker></mat-datepicker>
           <mat-error *ngIf="signUpForm.invalid">{{ errorMessage }}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -61,7 +61,7 @@
             [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide"
           >
-            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
         </mat-form-field>
         <br />

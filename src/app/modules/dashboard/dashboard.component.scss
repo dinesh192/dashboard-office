@@ -1,4 +1,4 @@
-@import "../../../assets/color";
+@import '../../../assets/color';
 
 .dashboard-information {
   display: flex;
@@ -109,6 +109,10 @@
     flex-direction: column;
   }
   .dashboard-content-data {
+    margin-left: 0em;
+  }
+  .dashboard-content-data-birthday,
+  .dashboard-content-dataWidget {
     margin-left: 0em;
   }
 }

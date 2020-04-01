@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../models/user';
 import * as moment from 'moment';
 import { DateAdapter } from '@angular/material';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
@@ -27,8 +26,7 @@ export class SignupComponent implements OnInit {
     private authService: AuthService,
     private route: Router,
     private formBuilder: FormBuilder,
-    private adapter: DateAdapter<any>,
-    private datePipe: DatePipe
+    private adapter: DateAdapter<any>
   ) {}
 
   ngOnInit() {

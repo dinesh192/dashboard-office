@@ -1,0 +1,63 @@
+<div class="addBirthdayDate-dashboard">
+  <div class="addBirthdayDate--title">
+    <h1>Add new collaborator</h1>
+    <br />
+  </div>
+  <div class="addBirthdayDate--form">
+    <form
+      [formGroup]="addCollabBirthday"
+      (ngSubmit)="onSubmit(); openLink($event)"
+    >
+      <div class="addBirthdayDate-dashboard-container">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            placeholder="Nicolas"
+            required
+            formControlName="firstName"
+          />
+          <mat-error *ngIf="addCollabBirthday.invalid">{{
+            errorMessage
+          }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="Doe"
+            required
+            formControlName="lastName"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Birthdate</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="birthdayDate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+          <mat-error *ngIf="addCollabBirthday.invalid">{{
+            errorMessage
+          }}</mat-error>
+        </mat-form-field>
+        <br />
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          [disabled]="addCollabBirthday.invalid"
+        >
+          done !
+        </button>
+        <br />
+      </div>
+    </form>
+  </div>
+</div>

@@ -14,7 +14,12 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatListModule,
-  MatCardModule
+  MatCardModule,
+  MatBottomSheetModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatTableModule,
+  MatTooltipModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -32,6 +37,8 @@ import { WidgetBirthdayComponent } from './widgets/widget-birthday/widget-birthd
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { TwitterComponent } from './widgets/twitter/twitter.component';
 import { TweetPipe } from './pipes/tweet.pipe';
+import { AddBirthdayComponent } from './widgets/add-birthday/add-birthday.component';
+import { ListCollaboratorComponent } from './components/list-collaborator/list-collaborator.component';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -46,7 +53,9 @@ import { TweetPipe } from './pipes/tweet.pipe';
     WidgetClockComponent,
     WidgetBirthdayComponent,
     TwitterComponent,
-    TweetPipe
+    TweetPipe,
+    AddBirthdayComponent,
+    ListCollaboratorComponent
   ],
   imports: [
     CommonModule,
@@ -56,15 +65,20 @@ import { TweetPipe } from './pipes/tweet.pipe';
     MatToolbarModule,
     MatButtonModule,
     MatMenuModule,
-    FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
     MatListModule,
+    MatBottomSheetModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     MaterialFileInputModule,
+    MatTooltipModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
     HighchartsChartModule,
     NgxSpinnerModule
   ],
@@ -80,8 +94,10 @@ import { TweetPipe } from './pipes/tweet.pipe';
     WeatherCardComponent,
     CardLikeComponent,
     WidgetClockComponent,
-    WidgetBirthdayComponent
+    WidgetBirthdayComponent,
+    ListCollaboratorComponent
   ],
+  entryComponents: [AddBirthdayComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule {}

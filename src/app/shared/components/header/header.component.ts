@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 import { DOCUMENT } from '@angular/common';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { AddBirthdayComponent } from '../../widgets/add-birthday/add-birthday.component';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +18,7 @@ export class HeaderComponent implements OnInit {
   fullScreen;
   closeFullScreen;
   constructor(
+    private bottomSheet: MatBottomSheet,
     private authService: AuthService,
     private route: Router,
     private userService: UsersService,
@@ -30,6 +33,10 @@ export class HeaderComponent implements OnInit {
     });
     this.fullScreen = true;
     this.closeFullScreen = false;
+  }
+
+  openBottomSheet() {
+    this.bottomSheet.open(AddBirthdayComponent);
   }
 
   logOut() {
@@ -68,5 +75,13 @@ export class HeaderComponent implements OnInit {
       /* IE/Edge */
       this.document.msExitFullscreen();
     }
+  }
+
+  openListCollaborator() {
+    this.route.navigate(['/collaborator-list']);
+  }
+
+  return() {
+    this.route.navigate(['/']);
   }
 }

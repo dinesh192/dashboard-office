@@ -1,0 +1,128 @@
+@import '../../../../assets/color';
+
+// mat-drawer-content {
+//   overflow: hidden !important;
+// }
+
+.list-collaborator-dashboard {
+  display: inline;
+  justify-content: center;
+  color: $white-color;
+
+  table {
+    width: 100%;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  th {
+    text-align: center;
+    padding: 0.8em !important;
+    color: #747d8a;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  td {
+    width: 25%;
+    padding: 0.3em !important;
+    color: $white-color;
+    font-size: 1em;
+    font-weight: lighter;
+  }
+
+  h1 {
+    font-size: 51px;
+    margin: 1em 2em 0em;
+  }
+}
+
+.list-collaborator-dashboard--input {
+  background-color: transparent;
+  margin-bottom: 7em !important;
+  margin: auto;
+  padding-top: 7em !important;
+  width: 76%;
+  justify-content: center;
+  display: flex !important;
+  .mat-form-field-wrapper {
+    width: 76%;
+  }
+}
+
+.list-collaborator-dashboard--list {
+  width: 76%;
+  margin: auto;
+}
+
+.mat-table {
+  background: transparent !important;
+}
+
+.mat-paginator {
+  background: transparent !important;
+  color: $white-color;
+}
+
+.mat-select-value {
+  color: $white-color;
+}
+
+.mat-button.mat-accent[disabled],
+.mat-button.mat-primary[disabled],
+.mat-button.mat-warn[disabled],
+.mat-button[disabled][disabled],
+.mat-icon-button.mat-accent[disabled],
+.mat-icon-button.mat-primary[disabled],
+.mat-icon-button.mat-warn[disabled],
+.mat-icon-button[disabled][disabled],
+.mat-stroked-button.mat-accent[disabled],
+.mat-stroked-button.mat-primary[disabled],
+.mat-stroked-button.mat-warn[disabled],
+.mat-stroked-button[disabled][disabled] {
+  color: $white-color;
+}
+
+.mat-select-arrow {
+  color: $white-color !important;
+}
+
+mat-footer-row,
+mat-header-row,
+mat-row,
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  border-bottom-color: #747d8a;
+  text-align: center !important;
+}
+
+mat-label {
+  font-size: 1.2em;
+}
+
+.mat-sort-header-container {
+  justify-content: center;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label,
+.mat-paginator-navigation-first,
+.mat-paginator-navigation-last,
+.mat-footer-cell,
+.mat-paginator {
+  color: #747d8a !important;
+}
+
+td.mat-footer-cell {
+  padding: 1.5em !important;
+}
+
+.mat-form-field-underline {
+  background-color: $white-color !important;
+}
+.mat-form-field-ripple {
+  background-color: $white-color !important;
+}
