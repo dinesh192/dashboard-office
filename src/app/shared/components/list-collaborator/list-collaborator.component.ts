@@ -56,7 +56,6 @@ export class ListCollaboratorComponent implements OnInit {
   }
 
   removeAt(data: string) {
-    console.log(data);
     this.birthdayService
       .deleteCustomer(data)
       .catch(err => (this.errorMessage = err));
