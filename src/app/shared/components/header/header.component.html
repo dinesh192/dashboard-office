@@ -2,9 +2,9 @@
   <mat-toolbar-row>
     <span>
       <img
-        src="../../../../assets/images/logo-amiltone-blanc.png"
+        src="../../../../assets/images/azure-white.png"
         alt="logo compangny"
-        width="10%"
+        width="35%"
         class="mat-tootlbar-compagny--logo"
         (click)="return()"
       />
@@ -37,11 +37,11 @@
             <span>{{ users.firstName }} {{ users.lastName | uppercase }}</span>
           </button>
           <mat-menu #menuProfil="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item disabled>
               <mat-icon svgIcon="account-circle-outline"></mat-icon>
               Profil
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item disabled>
               <mat-icon svgIcon="cogs"></mat-icon>
               Setting
             </button>
