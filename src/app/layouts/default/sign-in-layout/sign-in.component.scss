@@ -3,10 +3,12 @@
 .layoutSignIn-Dashbaord {
   display: flex;
   height: 100vh;
+
   &-bg {
     width: 65%;
-    background-image: url("../../../../assets/images/new-york-city-buildings-sunrise-morning-hd-wallpaper0.png");
+    background-image: url("../../../../assets/images/new-york-city-buildings-sunrise-morning-hd-wallpaper0BIS.png");
     background-size: cover;
+
     &::before {
       content: "";
       background: rgba(206, 115, 218, 0.38);
@@ -14,6 +16,7 @@
       width: 65%;
       position: absolute;
     }
+
     h1,
     .makeIt {
       position: relative;
@@ -27,10 +30,12 @@
       color: $white-color;
       z-index: 1;
     }
+
     .makeIt {
       font-size: 4em;
       top: -90px;
     }
+
     span {
       position: absolute;
       bottom: 20px;
@@ -40,6 +45,7 @@
       font-size: 0.5em;
     }
   }
+
   &-form {
     width: 35%;
   }
@@ -49,6 +55,7 @@
   .layoutSignIn-Dashbaord-bg {
     display: none;
   }
+
   .layoutSignIn-Dashbaord-form {
     width: 100%;
   }
