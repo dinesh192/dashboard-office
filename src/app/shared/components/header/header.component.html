@@ -1,20 +1,10 @@
 <mat-toolbar color="primary" class="tbar">
   <mat-toolbar-row>
-    <span>
-      <img
-        src="../../../../assets/images/azure-white.png"
-        alt="logo compangny"
-        width="35%"
-        class="mat-tootlbar-compagny--logo"
-        (click)="return()"
-      />
+    <span class="logo">
+      <img src="../../../../assets/images/logoLP.svg" alt="logo compangny" width="80%"
+        class="mat-tootlbar-compagny--logo" (click)="return()" />
     </span>
-    <div
-      fxFlex
-      fxLayout="row"
-      fxLayoutAlign="flex-end"
-      class="toolbar-dashboard"
-    >
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" class="toolbar-dashboard">
       <ul fxLayout="row" fxLayoutGap="20px">
         <li>
           <button mat-icon-button (click)="openListCollaborator()">
@@ -29,11 +19,7 @@
         </li>
         <li class="toolbar-dashboard-profil">
           <button mat-icon-button [matMenuTriggerFor]="menuProfil">
-            <img
-              src="{{ users.photoUrl }}"
-              alt=""
-              class="toolbar-dashboard-profil--img"
-            />
+            <img src="{{ users.photoUrl }}" alt="" class="toolbar-dashboard-profil--img" />
             <span>{{ users.firstName }} {{ users.lastName | uppercase }}</span>
           </button>
           <mat-menu #menuProfil="matMenu">
@@ -56,11 +42,7 @@
           <button mat-icon-button (click)="onFullScreen()" *ngIf="fullScreen">
             <mat-icon svgIcon="fullscreen"></mat-icon>
           </button>
-          <button
-            mat-icon-button
-            (click)="onCloseFullScreen()"
-            *ngIf="closeFullScreen"
-          >
+          <button mat-icon-button (click)="onCloseFullScreen()" *ngIf="closeFullScreen">
             <mat-icon svgIcon="fullscreen-exit"></mat-icon>
           </button>
         </li>

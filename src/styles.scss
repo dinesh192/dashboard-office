@@ -9,16 +9,15 @@
   @import url('./assets/fonts/Raleway-Regular.ttf');
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
+html {
   height: 100%;
-  box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: 'Lato';
+  font-size: 14px;
+  height: 100%;
 }
 
 /* STYLE ICON BUTTON */
@@ -26,13 +25,16 @@ body {
 button.mat-menu-item {
   line-height: 24px !important;
 }
-a.mat-menu-item > mat-icon {
+
+a.mat-menu-item>mat-icon {
   margin-bottom: 14px;
 }
+
 .mat-icon svg {
   height: 24px;
   width: 24px;
 }
+
 .mat-step-icon-content .mat-icon svg {
   height: 100%;
   width: 100%;
@@ -44,6 +46,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
+
 app-footer {
   margin-left: 1.5em;
   transition: 800ms ease all;
@@ -81,9 +84,11 @@ app-footer {
 .white {
   fill: #ffffff;
 }
+
 .gray {
   fill: #e0e0e0;
 }
+
 .yellow {
   fill: #ffeb3b;
 }
@@ -99,4 +104,26 @@ app-footer {
 
 a {
   color: $aml-blue;
+}
+
+
+.ng-trigger-routeAnimations {
+  height: 100%;
+}
+
+
+.mat-drawer-content {
+  overflow-y: hidden !important;
+}
+
+
+@media (max-width: 1400px) {
+
+  .mat-drawer-content {
+    overflow-y: scroll !important;
+  }
+}
+
+.svg-lp__border--premium {
+  background-color: #d4ad60;
 }

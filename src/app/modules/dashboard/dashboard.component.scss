@@ -1,116 +1,63 @@
 @import '../../../assets/color';
 
-.dashboard-information {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1em;
-  &-card {
-    width: 24%;
-  }
-}
-
-.bloc-stats {
-  display: flex;
-  justify-content: space-between;
-  &-right {
-    flex-direction: column;
-  }
-  &-left {
-    flex-direction: column;
-  }
-}
-
-.dashboard-information-card {
-  &-collaborator {
-    background: linear-gradient(
-      90deg,
-      rgba(11, 19, 43, 0.6867121848739496) 0%,
-      rgba(11, 19, 43, 1) 41%,
-      rgba(11, 19, 43, 1) 100%
-    );
-  }
-  &-website {
-    background: linear-gradient(
-      90deg,
-      rgba(206, 49, 137, 0.7175245098039216) 0%,
-      rgba(206, 49, 137, 1) 41%,
-      rgba(206, 49, 137, 1) 100%
-    );
-  }
-  &-linkedin {
-    background: linear-gradient(
-      90deg,
-      rgba(0, 115, 176, 0.6951155462184874) 0%,
-      rgba(0, 115, 176, 1) 41%,
-      rgba(0, 115, 176, 1) 100%
-    );
-  }
-  &-projects {
-    background: linear-gradient(
-      90deg,
-      rgba(249, 208, 3, 0.6867121848739496) 0%,
-      rgba(249, 208, 3, 1) 41%,
-      rgba(249, 208, 3, 1) 100%
-    );
-  }
-}
-
 .dashboard-content {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 2em;
-  padding: 1em 1em 0 1em;
-  &-dataWidget {
-    margin-left: 1.5em;
-    flex: 6;
-    display: flex;
-    height: 100%;
-  }
+  display: grid;
+  grid-template-columns: 35% 38% 25%;
+  grid-template-rows: 64px 60% 1fr;
+  gap: 1%;
+  height: 100%;
 
-  &-aside {
-    display: inline-block;
-  }
-  &-data {
-    display: flex;
-    &-container-weather {
-      margin-top: 1.5em;
-    }
-    &-hours {
-      padding: 2em;
-      vertical-align: middle;
-      background-color: $aml-blue;
-      color: $white-color;
-    }
-    &-birthday {
-      margin-left: 1.5em;
-      padding: 2em;
-      vertical-align: middle;
-      background-color: $aml-pink;
-      color: $white-color;
-    }
-    &-twitter {
-      padding: 2em;
-      vertical-align: middle;
-      background-color: $aml-pink;
-      color: $white-color;
-    }
-  }
   &-weather {
-    flex: 3;
-    vertical-align: middle;
     background: $aml-blue;
     color: $white-color;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    padding: 2em;
+    margin-bottom: 1.5em;
+    overflow-y: auto;
   }
+
+  &-hours {
+    background: $aml-blue;
+    color: $white-color;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding: 2em;
+  }
+
+  &-birthday {
+    background-color: $aml-pink;
+    color: $white-color;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding: 2em;
+  }
+
+  &-twitter {
+    background-color: $aml-pink;
+    color: $white-color;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    padding: 2em;
+    margin-bottom: 1.5em;
+  }
+
+
 }
 
 @media (max-width: 1400px) {
-  .dashboard-content,
-  .dashboard-content-data {
+
+  .dashboard-content {
+    display: flex;
     flex-direction: column;
   }
+
   .dashboard-content-data {
     margin-left: 0em;
   }
+
   .dashboard-content-data-birthday,
   .dashboard-content-dataWidget {
     margin-left: 0em;

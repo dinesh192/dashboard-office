@@ -1,63 +1,133 @@
 .dashboard-weather {
-  font-family: "Lato";
-  padding: 2em 0em;
-  text-align: center;
-  .dashboard-weather-title {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &-header {
     text-align: center;
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 40px;
-    letter-spacing: 0.7px;
-    margin-bottom: 0.1em;
-  }
-  .dashboard-weather-localisation {
-    margin-bottom: 2em;
+
+    &-title {
+      font-size: 4rem;
+      font-weight: 900;
+    }
+
+    &-localisation {
+      font-size: 1.5rem;
+      padding: 1em 0;
+    }
   }
 
-  .dashboard-weather--infos {
+
+
+  .dashboard-weatherOfDay {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 1em;
-  }
+    justify-content: space-around;
+    margin: auto 0;
+    padding: 2em 0;
 
-  .dashboard-weather--icon {
-    img {
-      margin-bottom: 1em;
-    }
-  }
+    &-icon {
+      display: grid;
+      text-align: center;
+      grid-template-rows: 91% 1fr;
 
-  .dashboard-weather--temp {
-    width: 70%;
-    display: inline-grid;
-    white-space: nowrap;
-    text-align: end;
-    &-temperature {
-      font-size: 5.5em;
-      font-weight: 800;
+      &--description {
+        font-size: 1em;
+        white-space: nowrap;
+      }
     }
-    &-like {
-      margin-bottom: 1.5em;
-      &-up,
-      &-down {
-        display: inline-flex;
-        align-items: center;
-        font-size: 0.7em;
-        mat-icon {
-          margin-right: 0.5em;
+
+    &-temperatures {
+      display: grid;
+      text-align: right;
+      grid-template-rows: 10% 1fr 1fr;
+
+      &--temp {
+        font-size: 5.5em;
+        font-weight: 800;
+        grid-row-start: 2;
+      }
+
+      &--like {
+        grid-row-start: 3;
+
+        &-up,
+        &-down {
+          display: inline-flex;
+          align-items: center;
+          font-size: 0.7em;
+
+          mat-icon {
+            margin-right: 0.5em;
+          }
+        }
+
+        &-up {
+          padding-right: 1em;
         }
       }
-      &-up {
-        padding-right: 1em;
+
+      &--feltTemp {
+        grid-row-start: 4;
+      }
+
+    }
+
+  }
+
+  .dashboard-weatherOfDay-informations {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+    padding: 2em 0;
+
+    &--weather {
+      display: grid;
+      text-align: center;
+    }
+
+    .icon-weather-moreInformations {
+      width: 65%;
+      margin: auto;
+      padding-bottom: 1em;
+    }
+
+  }
+
+
+  .dashboard-weatherOfNextDay {
+    margin-top: auto;
+    text-align: center;
+    padding: 2em 0;
+
+    &--title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      padding: 0 0 1.5em;
+    }
+
+    &--days {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-date {
+        display: inline;
+      }
+
+      .icon-weather-nextDays-data {
+        width: 65%;
+        margin: 1em 0;
       }
     }
-    &-description {
-      font-size: 1em;
-      white-space: nowrap;
-    }
-    &-tempertaureRessentie {
-      font-size: 0.9em;
-    }
+
+
+  }
+
+
+  .widget-line {
+    margin: auto;
+    width: 100%;
+    padding: 2em 0;
   }
 
   .icon-weather {
@@ -70,84 +140,71 @@
     overflow: hidden;
   }
 
+
   @-webkit-keyframes zoomin {
     0% {
       transform: scale(0.65);
     }
+
     50% {
       transform: scale(0.8);
     }
+
     100% {
       transform: scale(0.65);
     }
   }
+
   @keyframes zoomin {
     0% {
       transform: scale(0.65);
     }
+
     50% {
       transform: scale(0.8);
     }
+
     100% {
       transform: scale(0.65);
     }
-  } /*End of Zoom in Keyframes */
+  }
+
+  /*End of Zoom in Keyframes */
 
   /* Zoom out Keyframes */
   @-webkit-keyframes zoomout {
     0% {
       transform: scale(0.65);
     }
+
     50% {
       transform: scale(0.37);
     }
+
     100% {
       transform: scale(0.65);
     }
   }
+
   @keyframes zoomout {
     0% {
       transform: scale(0.65);
     }
+
     50% {
       transform: scale(0.37);
     }
+
     100% {
       transform: scale(0.65);
     }
-  } /*End of Zoom out Keyframes */
+  }
+
+  /*End of Zoom out Keyframes */
 }
 
-.icon-weather-moreInformations {
-  width: 65%;
-  margin: auto;
-  padding-bottom: 1em;
-}
 
-.dashboard-weather-moreInformations {
-  margin: 1.5em 0;
-  display: flex;
-  justify-content: space-around;
-  &-wind {
-    display: inline-grid;
-  }
-  &-humidity {
-    display: grid;
-  }
-}
 
-.dashboard-weather-nextDays {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  &-test {
-    display: inline;
-  }
-  .icon-weather-nextDays-data {
-    width: 65%;
-    margin: 1em 0;
-  }
-}
 
 .spinner {
   position: relative;
