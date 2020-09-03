@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { User } from '../models/user';
+import { Observable, from, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   users: User;
@@ -22,7 +24,7 @@ export class AuthService {
             resolve();
             this.saveInfoUser(userInformations);
           },
-          error => {
+          (error) => {
             reject(error);
           }
         );
@@ -37,25 +39,38 @@ export class AuthService {
         firstName: userInformations.firstName,
         lastName: userInformations.lastName,
         birthdayDate: userInformations.birthdayDate,
-        photoUrl: userInformations.photoUrl
+        photoUrl: userInformations.photoUrl,
       });
   }
 
-  signInUser(email: string, password: string) {
-    return new Promise((resolve, reject) => {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(
-          () => {
-            resolve();
-          },
-          error => {
-            reject(error);
-          }
-        );
-    });
+  signInUser(
+    email: string,
+    password: string
+  ): Observable<firebase.auth.UserCredential> {
+    return from(
+      firebase.auth().signInWithEmailAndPassword(email, password)
+    ).pipe(
+      catchError((error) => {
+        return throwError(error);
+      })
+    );
   }
+
+  // signInUser(email: string, password: string) {
+  //   return new Promise((resolve, reject) => {
+  //     firebase
+  //       .auth()
+  //       .signInWithEmailAndPassword(email, password)
+  //       .then(
+  //         () => {
+  //           resolve();
+  //         },
+  //         (error) => {
+  //           reject(error);
+  //         }
+  //       );
+  //   });
+  // }
 
   signOutUser() {
     firebase.auth().signOut();
@@ -72,7 +87,7 @@ export class AuthService {
       upload.on(
         firebase.storage.TaskEvent.STATE_CHANGED,
         () => {},
-        error => {
+        (error) => {
           console.log(error);
           reject(error);
         },

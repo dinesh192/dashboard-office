@@ -36,11 +36,11 @@ const routes: Routes = [
     component: SignInLayoutComponent,
     data: { animation: 'signIN' }
   },
-  // {
-  //   path: 'sign-up',
-  //   component: SignUpLayoutComponent,
-  //   data: { animation: 'signUP' }
-  // },
+  {
+    path: 'sign-up',
+    component: SignUpLayoutComponent,
+    data: { animation: 'signUP' }
+  },
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', redirectTo: '' }
 ];
