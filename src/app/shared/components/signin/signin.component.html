@@ -6,48 +6,49 @@
         <mat-form-field appearance="outline">
           <mat-label>Enter your email</mat-label>
           <input
-            matInput
-            placeholder="elsa@example.com"
-            required
             formControlName="email"
+            required
+            placeholder="test@test.com"
+            matInput
           />
-          <mat-error *ngIf="signInForm.invalid">{{ errorMessage }}</mat-error>
+          <mat-error *ngIf="this.signInForm.controls.email.invalid">{{
+            errorMessage
+          }}</mat-error>
         </mat-form-field>
         <br />
+
         <mat-form-field appearance="outline">
           <mat-label>Enter your password</mat-label>
           <input
-            matInput
-            [type]="hide ? 'password' : 'text'"
             formControlName="password"
+            [type]="hide ? 'password' : 'text'"
+            required
+            matInput
           />
-          <button
-            mat-icon-button
-            matSuffix
-            (click)="hide = !hide"
-            [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide"
+          <mat-error
+            *ngIf="
+              this.isSubmitted && this.signInForm.controls.password.invalid
+            "
+            >Veuillez renseigner votre password.</mat-error
           >
-            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-          </button>
+          <mat-icon matSuffix (click)="hide = !hide">{{
+            hide ? 'visibility_off' : 'visibility'
+          }}</mat-icon>
         </mat-form-field>
+        <br />
+        <button mat-flat-button color="primary" type="submit">Sign in</button>
         <br />
         <span *ngIf="errorMessage">
           {{ errorMessage }}
         </span>
-        <br />
-        <button mat-flat-button color="primary" type="submit">
-          Sign in
-        </button>
-        <br />
-        <!-- <button
+        <button
           mat-flat-button
           color="primary"
           type="button"
           (click)="OnNavigate()"
         >
           Create an account !
-        </button> -->
+        </button>
       </div>
     </form>
   </div>
